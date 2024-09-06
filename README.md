@@ -51,7 +51,7 @@ After setting up environment, set environment variable below. These variables wi
 ```bash
 export AWS_DEFAULT_REGION=<aws_region> # e.g. "us-east-1", "eu-central-1"
 export AWS_DEFAULT_ACCOUNT=<your_account_id> # e.g. 123456789012
-export ECR_REPO_NAME="comfyui"
+export ECR_REPO_NAME="comfyui-rick"
 ```
 
 ### Build & push docker image to ECR
@@ -71,11 +71,11 @@ aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --usernam
 ```
 docker build -t comfyui .
 # or alternatively if you are using M1 / M2 / ... Mac
-docker build --platform linux/amd64 -t comfyui .
+docker build --platform linux/amd64 -t comfyui-rick .
 ```
 4. Tag and push docker image to ECR
 ```
-docker tag comfyui:latest $AWS_DEFAULT_ACCOUNT.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:latest
+docker tag comfyui-rick:latest $AWS_DEFAULT_ACCOUNT.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:latest
 docker push $AWS_DEFAULT_ACCOUNT.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:latest
 ```
 
