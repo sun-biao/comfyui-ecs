@@ -69,7 +69,7 @@ aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --usernam
 ```
 3. Build docker image (make sure you're in the same directory as your dockerfile)
 ```
-docker build -t comfyui .
+docker build -t comfyui-rick .
 # or alternatively if you are using M1 / M2 / ... Mac
 docker build --platform linux/amd64 -t comfyui-rick .
 ```
